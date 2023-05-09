@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">VK android developer test</string>
+    <string name="tv_size_text">Размер: %s</string>
+    <string name="tv_creation_date_text">Дата создания: %s</string>
+    <string name="no_files_text">Нет файлов</string>
+    <string name="sort_by_name_text">Сортировка по названию</string>
+    <string name="sort_by_size_text">Сортировка по размеру</string>
+    <string name="sort_by_creation_date">Сортировка по дате создания</string>
+    <string name="sort_by_extension_text">Сортировка по расширению</string>
+    <string name="sort_by_desc_text">По убыванию</string>
+    <string name="sort_by_asc_text">По возрастанию</string>
+</resources>
