@@ -82,4 +82,8 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 }

@@ -10,18 +10,18 @@ import javax.inject.Inject
 
 class FileMapper @Inject constructor() {
 
-    fun mapToFile(file: java.io.File, id: Int): File {
-        val fileName = file.name
-        val creationTime = Files.getAttribute(file.toPath(), "creationTime") as FileTime
+    fun mapToFile(rawFile: RawFile, id: Int): File {
+        val fileName = rawFile.file.name
+        val creationTime = Files.getAttribute(rawFile.file.toPath(), "creationTime") as FileTime
         val formatter = DateTimeFormatter.ofPattern("dd.M.yyyy hh:mm").withZone(ZoneId.systemDefault())
         val formattedDate = formatter.format(creationTime.toInstant())
-        val size = getSize(file.length())
+        val size = getSize(rawFile.file.length())
         return File(
-            id, fileName, formattedDate, size, getFileType(file)
+            id, fileName, formattedDate, size, getFileType(rawFile.file), rawFile.isEdited
         )
     }
 
-    fun mapToFileList(list: List<java.io.File>): List<File> {
+    fun mapToFileList(list: List<RawFile>): List<File> {
         val fileList = mutableListOf<File>()
         for((index, elem) in list.withIndex()){
             fileList.add(mapToFile(elem,index))

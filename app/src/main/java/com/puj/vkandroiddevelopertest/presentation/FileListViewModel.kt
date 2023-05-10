@@ -8,14 +8,19 @@ class FileListViewModel @Inject constructor(
     private val getFileListUseCase: GetFileListUseCase,
     private val selectDirectoryUseCase: SelectDirectoryUseCase,
     private val goOneLevelUpUseCase: GoOneLevelUpUseCase,
-    private val sortFilesUseCase: SortFilesUseCase
+    private val sortFilesUseCase: SortFilesUseCase,
+    private val saveFileHashCodesUseCase: SaveFileHashCodesUseCase
 ): ViewModel() {
 
     val fileList = getFileListUseCase.invoke()
 
+    init {
+        saveFileHashCodesUseCase()
+    }
+
     fun onFileClick(file: File) {
         if(file.fileType == File.FileType.TYPE_FOLDER){
-            selectDirectoryUseCase.invoke(file.fileName)
+            selectDirectoryUseCase(file.fileName)
         }
     }
 
@@ -24,6 +29,10 @@ class FileListViewModel @Inject constructor(
     }
 
     fun sortFiles(sortType: SortType) {
-        sortFilesUseCase.invoke(sortType)
+        sortFilesUseCase(sortType)
+    }
+
+    fun saveFileHashCodes() {
+        saveFileHashCodesUseCase()
     }
 }

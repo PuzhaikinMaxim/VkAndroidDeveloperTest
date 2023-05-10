@@ -11,4 +11,6 @@ interface FileRepository {
     fun goOneLevelUp()
 
     fun sortFiles(sortType: SortType)
+
+    fun saveFileHashCodes()
 }

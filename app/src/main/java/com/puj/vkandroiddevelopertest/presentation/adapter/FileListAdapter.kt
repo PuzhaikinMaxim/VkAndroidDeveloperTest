@@ -2,6 +2,7 @@ package com.puj.vkandroiddevelopertest.presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -44,6 +45,7 @@ class FileListAdapter(private var context: Context?): Adapter<FileListAdapter.It
             cvFile.setOnClickListener {
                 onItemClickListener?.invoke(item)
             }
+            if(item.isEdited) ivEdited.visibility = View.VISIBLE
         }
     }
 

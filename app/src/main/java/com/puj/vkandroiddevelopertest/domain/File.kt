@@ -5,7 +5,8 @@ data class File(
     val fileName: String,
     val creationDate: String,
     val size: String,
-    val fileType: FileType
+    val fileType: FileType,
+    val isEdited: Boolean = false
 ) {
 
     enum class FileType {
