@@ -21,8 +21,6 @@ interface ApplicationComponent {
 
     fun inject(fragment: FileListFragment)
 
-    fun inject(application: FileApplication)
-
     @Component.Factory
     interface Factory {
 

@@ -1,7 +1,6 @@
 package com.puj.vkandroiddevelopertest.data
 
 import com.puj.vkandroiddevelopertest.domain.SortType
-import java.io.File
 import java.nio.file.Files
 import java.nio.file.attribute.FileTime
 import javax.inject.Inject

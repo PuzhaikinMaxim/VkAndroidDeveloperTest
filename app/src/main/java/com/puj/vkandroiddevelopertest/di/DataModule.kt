@@ -1,13 +1,11 @@
 package com.puj.vkandroiddevelopertest.di
 
 import android.app.Application
-import android.content.Context
 import com.puj.vkandroiddevelopertest.data.FileDatabase
 import com.puj.vkandroiddevelopertest.data.FileHashDao
 import com.puj.vkandroiddevelopertest.data.FileRepositoryImpl
-import com.puj.vkandroiddevelopertest.data.TemporaryShowedFileDao
+import com.puj.vkandroiddevelopertest.data.ShowedFileDao
 import com.puj.vkandroiddevelopertest.domain.FileRepository
-import com.puj.vkandroiddevelopertest.presentation.FileApplication
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -34,7 +32,7 @@ interface DataModule {
         @ApplicationScope
         fun provideTemporaryShowedFileDao(
             application: Application
-        ): TemporaryShowedFileDao {
+        ): ShowedFileDao {
             return FileDatabase.getInstance(application).temporaryShowedFileDao()
         }
     }

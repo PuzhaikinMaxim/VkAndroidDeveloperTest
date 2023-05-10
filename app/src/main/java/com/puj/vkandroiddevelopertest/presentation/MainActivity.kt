@@ -1,8 +1,14 @@
 package com.puj.vkandroiddevelopertest.presentation
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.puj.vkandroiddevelopertest.R
 import com.puj.vkandroiddevelopertest.databinding.ActivityMainBinding
 import com.puj.vkandroiddevelopertest.domain.SortType
@@ -81,9 +87,5 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fc_file_list, fragment)
             .addToBackStack(null)
             .commit()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }

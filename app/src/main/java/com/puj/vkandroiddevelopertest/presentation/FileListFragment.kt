@@ -82,11 +82,6 @@ class FileListFragment: Fragment() {
         super.onDetach()
     }
 
-    override fun onDestroy() {
-        viewModel.saveFileHashCodes()
-        super.onDestroy()
-    }
-
     companion object {
 
         fun newFragment(): FileListFragment {
